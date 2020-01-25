@@ -1,0 +1,13 @@
+1 show :: Show a => a -> String
+show takes a value and turns it into a string
+
+2 (==) :: Eq a = a -> a -> Bool
+(==) takes to values with an instance of equal (otherwise they cannot be compared)
+and returns a Bool value (True or False)
+
+3 fst :: (a, b) -> a
+fst takes a tuple of two values and retuns the first value of the tuple
+the values inside the tuple do not need to be of the same type
+
+4 (+) :: Num a => a -> a -> a
+(+) takes to values with an instance of Num and returns one value with the same type

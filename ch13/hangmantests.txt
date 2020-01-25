@@ -1,0 +1,13 @@
+-- the Puzzle datatype includes the word we're trying to guess, a list of characters correctly guessed so far 
+-- and a list of the characters guess so far
+data Puzzle = Puzzle String [Maybe Char] Char
+
+-- our own show instance makes sure that it does not show the word that needs to be guessed
+-- it shows only the correctly guessed characters (aka discovered) and our other guesses (guessed)
+instance Show Puzzle where
+  show (Puzzle _ discovered guessed) = 
+    (interpserse ' ' $ fmap renderPuzzleChar discovered) 
+     ++ " Guessed so far:  " ++ guessed)
+     
+freshPuzzle :: String -> Puzzle
+freshPuzzle wrd = Puzzle wrd (map (const Nothing) wrd) []

@@ -1,0 +1,2 @@
+fibs = 1 : scanl (+) 1 fibs  -- gives an infinite list with Fibonacci numbers
+fibsN x = fibs !! x          -- gives the n'th Fibonacci number (where n = x + 1)

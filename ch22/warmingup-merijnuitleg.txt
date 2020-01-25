@@ -1,0 +1,11 @@
+foo = do
+    x <- bar
+    y <- f x
+    g y
+    h x
+    
+bar >>= \x -> (do { y <- f x; g y; h x })
+bar >>= \x -> (f x >>= \y -> do { g y; h x })
+bar >>=
+\x ->(f x >>= \y ->
+(g y >> h x ))
